@@ -14,10 +14,14 @@
     border-radius: 17%;
     padding: 1.1%;
     font-size: 115%;
+    
+  }
+  .align{
+    display: flex;
   }
   .todo-form {
-    margin: 8% 20% 0% 20%;
-    
+    margin: 8% 25% 0% 25%;
+    flex-direction: row;   
   }
   body { 
     background-image: linear-gradient(145deg, #00FFCD, #339BFF, #FFCCFF, #9833FF);
@@ -43,3 +47,4 @@
     padding: 5% 22% 1% 22%;
   
   }
+ 
