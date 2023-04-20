@@ -31,20 +31,50 @@
   .cover{
     margin : 10%;
   }
-  .item {
+  #item {
     background-color: #fff;
-    padding: 1%;
+    padding: 3%;
     font-size: 17px;
     list-style: none;
     
   }
-  .todo-items {
-    width: 10%;
-    display: flex; 
-  } 
+  #item:first-child {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+  #item:last-child {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+ 
   .container {
     min-width: 20%;
     padding: 5% 22% 1% 22%;
   
   }
- 
+  .row{
+    display: flex;
+  }
+  .delete-icon {
+    float: right;
+    
+    border: none;
+   
+    padding: 2px 5px;
+    /* margin-left: 10px; */
+    font-size: 17px;
+  }
+  .edit-icon {
+    float: right !important;
+    
+    border: none;
+   
+    padding: 2px 5px;
+    /* margin-left: 10px; */
+    font-size: 17px;
+  }
+.css-wnkddu-MuiPaper-root-MuiAlert-root{
+  width :25%;
+  position: absolute;
+
+}

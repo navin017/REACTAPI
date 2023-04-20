@@ -1,0 +1,26 @@
+// const completeTodo = id =>{
+    //   const updateTodos = todos.map(todo=>{
+    //     if(todo,id === id){
+    //       todo.isComplete = !todo.isComplete
+    //     }
+    //     return todo;
+    //   })
+    //   setTodos(updateTodos)
+    // }
+
+    // <div>
+    // {isTodo && <BasicAlerts/>}
+    // {/* <TodoList onSubmit={addTodo} onClick={()=>{setIsTodo(true)}}/> */}
+
+
+    // <div className='todo-list-ctr'> 
+    {/* {todos.map((todo,index)=>{  
+    <div 
+    className={todo.isComplete?'todo-row complete':'todo-row'} 
+    key={index}
+    >  
+    
+        <div key={todo.id}  className="todo-list-name" onClick={()=>completeTodo(todo.id)}> 
+        {console.log("===========================================================TODO NAME+++++++",todo.name)} 
+            {todo.name}  
+        </div>   */}
