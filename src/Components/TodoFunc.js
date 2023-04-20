@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import {useState,useEffect} from 'react';
+import React from 'react';
 import TodoList from './Todolist';
-
+import ResponsiveDial from './mui'
 
 function TodoFunc() {
     const[todos, setTodos] = useState([]);
@@ -9,10 +10,14 @@ function TodoFunc() {
           return;
         }
         const newTodos = [todo,...todos];
-        setTodos(newTodos)
+        setTodos(newTodos)  
     };
+
     
-    
+    useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
+  
     
   return (
     <div>
