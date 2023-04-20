@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import '../Components/Todo.css';
-function Todolist(props) {
+function TodoList(props) {
     const  [input,setInput] = useState('');
     const handleChange=(e)=>{
       setInput(e.target.value)
@@ -25,6 +25,7 @@ function Todolist(props) {
         placeholder="Add a Todo..." 
         autocomplete="off"
         value = {input}
+        name = 'text'
         onChange={handleChange}
         />   
         <button type="submit" className="add-button">ADD</button> 
@@ -41,4 +42,4 @@ function Todolist(props) {
   )
 }
 
-export default Todolist
+export default TodoList

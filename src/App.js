@@ -1,4 +1,4 @@
-import Todolist from './Components/Todolist';
+import TodoFunc from './Components/TodoFunc';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     
     </div>
     <div>
-       <Todolist/>
+       <TodoFunc />
     </div>
     </>
   );
