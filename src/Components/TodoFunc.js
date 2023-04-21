@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import React from 'react';
 import TodoList from './Todolist';
 import BasicAlerts from './alert';
@@ -17,11 +17,12 @@ function TodoFunc() {
         const newTodos = [todo,...todos];
         setTodos(newTodos)  
     };
-
+    useEffect(() => {
+      console.log("****************", todos)
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos, isTodo]);
     
-    // useEffect(() => {
-    //   localStorage.setItem('todos', JSON.stringify(todos));
-    // }, [todos, isTodo]);
+   
 
     // const [show, setShow] = useState(() => {
       
@@ -30,6 +31,7 @@ function TodoFunc() {
     //   return initialValue || "";
     // });
    const removeTodo=id=>{
+    console.log("RMOVE")
     const removeThat =[...todos].filter(todo=>todo.id !==id)
     setTodos(removeThat);
    }
@@ -44,8 +46,11 @@ function TodoFunc() {
     });
     
     setTodos(updatedTodos);
+
+   
     
   };
+  
   return (
     <>
     <div>

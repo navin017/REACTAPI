@@ -16,9 +16,8 @@
     font-size: 115%;
     
   }
-  .align{
-    display: flex;
-  }
+  
+  
   .todo-form {
     margin: 8% 25% 0% 25%;
     flex-direction: row;   
@@ -28,14 +27,16 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-  .cover{
-    margin : 10%;
-  }
+
   #item {
     background-color: #fff;
-    padding: 3%;
+    padding: 1%;
     font-size: 17px;
     list-style: none;
+    width: 50%;
+
+    
+  
     
   }
   #item:first-child {
@@ -47,11 +48,7 @@
     border-bottom-right-radius: 7px;
   }
  
-  .container {
-    min-width: 20%;
-    padding: 5% 22% 1% 22%;
   
-  }
   
  
     
@@ -73,4 +70,7 @@
   width :25%;
   position: absolute;
 
+}
+.todo-items {
+  width: 50% 0% 50% 0%; 
 }
