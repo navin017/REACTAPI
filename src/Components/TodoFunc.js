@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react';
+import {useState} from 'react';
 import React from 'react';
 import TodoList from './Todolist';
 import BasicAlerts from './alert';
@@ -19,9 +19,9 @@ function TodoFunc() {
     };
 
     
-    useEffect(() => {
-      localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos, isTodo]);
+    // useEffect(() => {
+    //   localStorage.setItem('todos', JSON.stringify(todos));
+    // }, [todos, isTodo]);
 
     // const [show, setShow] = useState(() => {
       
@@ -30,18 +30,19 @@ function TodoFunc() {
     //   return initialValue || "";
     // });
    const removeTodo=id=>{
-    const removeThat =[...todos].filter[todo=>todo.id !==id]
+    const removeThat =[...todos].filter(todo=>todo.id !==id)
     setTodos(removeThat);
    }
 
   const completeTodo = id =>{
     
-    const updatedTodos = todos.map(todo=>{
+    let updatedTodos = todos.map(todo=>{
       if(todo.id === id){
         todo.isComplete = !todo.isComplete;
       }
       return todo;
     });
+    
     setTodos(updatedTodos);
     
   };
@@ -51,6 +52,7 @@ function TodoFunc() {
       {isTodo && <BasicAlerts/>}
       <TodoList onSubmit={addTodo} todos={todos} onClick={()=>{setIsTodo(true)}}/>
       <TodoEd todos={todos} completeTodo = {completeTodo} removeTodo={removeTodo}/>
+      
     </div>
     
     
@@ -60,6 +62,7 @@ function TodoFunc() {
 }
 
 export default TodoFunc;
+
 
 
 // &&, ?:, ??

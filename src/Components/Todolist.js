@@ -1,13 +1,10 @@
 import React from 'react';
 import {useState} from 'react';
 import '../Components/Todo.css';
-import EditIcon from '@mui/icons-material/Edit';  
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'; 
-import TodoFunc from './TodoFunc'; 
-
+// import EditIcon from '@mui/icons-material/Edit';  
+// import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'; 
 function TodoList(props) {
     const  [input,setInput] = useState('');
-    const[edit, setEdit] = useState({ id:'null',name: '' });
     const handleChange=(e)=>{
       setInput(e.target.value)
     };
@@ -24,10 +21,9 @@ function TodoList(props) {
     
   return (
    
-    <div>
-    <div className='cover'>
+    
       <form className="todo-form" onSubmit={handleSubmit}> 
-      <div className='align'>
+     
         <input 
         type="text" 
         className ="todo-input" 
@@ -39,29 +35,29 @@ function TodoList(props) {
         />   
         <button type="submit" className="add-button" onClick={()=>{props.onClick()}} >ADD</button> 
      
-        </div>
       </form> 
-      <div className='container'>
+      /* <div className='container'> */
       
-      {props.todos.map((todo)=>{
-        return(
-          <li id="item" 
-        className={todo.isComplete?'todo-row complete':'todo-row'}
-        key={todo.id} onClick={()=>props.completeTodo(todo.id)}>
-     <div className='row'>
-     {todo.name}  
+      // * {props.todos.map((todo)=>{
+    //     return(
+    //       <li id="item" 
+    //     className={todo.isComplete?'todo-row complete':'todo-row'}
+    //     key={todo.id} onClick={()=>completeTodo(todo.id)}>
+    //  <div className='row'>
+    //  {todo.name}  
+    //   <div className='delete-icon'>
+    //     <DeleteOutlineIcon onclick={()=>removeTodo(todo.id)} /> 
+    //     </div>
+    // <div className='edit-icon'>
+    //  <EditIcon onclick={()=>setEdit({id:todo.id,value:todo.name})}  />  
+    //  </div>
     
-     <EditIcon onclick={()=>setEdit({id:todo.id,value:todo.name})} className='edit-icon' />  
-        <DeleteOutlineIcon onclick={()=>props.removeTodo(todo.id)} className='delete-icon'/> 
-        
-        </div>
-        </li> 
-        );
-        })}
+    //     </div>
+    //     </li> 
+    //     );
+        // })} */}
       
-    </div>
-    </div>
-    </div>
+    // </div>
     
   )
       }

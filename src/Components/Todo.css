@@ -52,26 +52,22 @@
     padding: 5% 22% 1% 22%;
   
   }
-  .row{
-    display: flex;
-  }
-  .delete-icon {
-    float: right;
+  
+ 
     
-    border: none;
    
-    padding: 2px 5px;
-    /* margin-left: 10px; */
-    font-size: 17px;
-  }
+  
   .edit-icon {
     float: right !important;
+    margin-right: 2%;
     
-    border: none;
+ 
+  }
+  .delete-icon {
+    float: right !important;
+
    
-    padding: 2px 5px;
-    /* margin-left: 10px; */
-    font-size: 17px;
+ 
   }
 .css-wnkddu-MuiPaper-root-MuiAlert-root{
   width :25%;
