@@ -34,7 +34,7 @@
     font-size: 17px;
     list-style: none;
     width: 50%;
-
+    margin-left: 20.5% ;
     
   
     
@@ -71,6 +71,7 @@
   position: absolute;
 
 }
-.todo-items {
-  width: 50% 0% 50% 0%; 
+.complete{
+  text-decoration: line-through;
+  opacity:0.4;
 }

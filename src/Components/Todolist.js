@@ -1,10 +1,14 @@
-import React from 'react';
-import {useState} from 'react';
+import React, { useEffect } from 'react';
+import {useState,useRef} from 'react';
 import '../Components/Todo.css';
 // import EditIcon from '@mui/icons-material/Edit';  
 // import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'; 
 function TodoList(props) {
-    const  [input,setInput] = useState('');
+    const  [input,setInput] = useState(props.edit?props.edit.value:'');
+    const inputRef = useRef(null)
+    useEffect(()=>{
+      inputRef.current.focus()
+    })
     const handleChange=(e)=>{
       setInput(e.target.value)
     };
@@ -16,48 +20,48 @@ function TodoList(props) {
         });
         setInput('');
     };
-  
-       
+   
+   
     
   return (
    
     
       <form className="todo-form" onSubmit={handleSubmit}> 
-     
-        <input 
+     {props.edit ?(
+      <>
+      <input 
         type="text" 
         className ="todo-input" 
-        placeholder="Add a Todo..." 
-        autocomplete="off"
+        placeholder="Update your Task..." 
+        autoComplete="off"
         value = {input}
         name = 'text'
         onChange={handleChange}
+        ref={inputRef}
         />   
-        <button type="submit" className="add-button" onClick={()=>{props.onClick()}} >ADD</button> 
+        <button type="submit" className="add-button" >Update</button>
+        </>
+        ):
+        (
+          <> <input 
+          type="text" 
+          className ="todo-input" 
+          placeholder="Add a Todo..." 
+          autoComplete="off"
+          value = {input}
+          name = 'text'
+          onChange={handleChange}
+          ref={inputRef}
+          />   
+          <button type="submit" className="add-button" >ADD</button>
+          </>)
+          
+        }
+         
+        
      
       </form> 
-      /* <div className='container'> */
-      
-      // * {props.todos.map((todo)=>{
-    //     return(
-    //       <li id="item" 
-    //     className={todo.isComplete?'todo-row complete':'todo-row'}
-    //     key={todo.id} onClick={()=>completeTodo(todo.id)}>
-    //  <div className='row'>
-    //  {todo.name}  
-    //   <div className='delete-icon'>
-    //     <DeleteOutlineIcon onclick={()=>removeTodo(todo.id)} /> 
-    //     </div>
-    // <div className='edit-icon'>
-    //  <EditIcon onclick={()=>setEdit({id:todo.id,value:todo.name})}  />  
-    //  </div>
-    
-    //     </div>
-    //     </li> 
-    //     );
-        // })} */}
-      
-    // </div>
+     
     
   )
       }

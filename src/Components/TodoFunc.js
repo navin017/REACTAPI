@@ -18,23 +18,24 @@ function TodoFunc() {
         setTodos(newTodos)  
     };
     useEffect(() => {
-      console.log("****************", todos)
-      localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos, isTodo]);
+     
+        localStorage.setItem('todos', JSON.stringify(todos));
+      }, [todos, isTodo])
     
+      const updateTodo =  (todoId,newValue)=>{
+        if(!newValue.name || /^\s*$/.test(newValue.name)){
+          return;
+        }   
+        setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+      };
+
+    const removeTodo = (id) => {
+      const removeArr = todos.filter((item) => item.id !== id);
+      setTodos(removeArr);
+    };
+
    
 
-    // const [show, setShow] = useState(() => {
-      
-    //   const saved = localStorage.getItem(show);
-    //   const initialValue = JSON.parse(saved);
-    //   return initialValue || "";
-    // });
-   const removeTodo=id=>{
-    console.log("RMOVE")
-    const removeThat =[...todos].filter(todo=>todo.id !==id)
-    setTodos(removeThat);
-   }
 
   const completeTodo = id =>{
     
@@ -52,17 +53,12 @@ function TodoFunc() {
   };
   
   return (
-    <>
+    
     <div>
-      {isTodo && <BasicAlerts/>}
+     
       <TodoList onSubmit={addTodo} todos={todos} onClick={()=>{setIsTodo(true)}}/>
-      <TodoEd todos={todos} completeTodo = {completeTodo} removeTodo={removeTodo}/>
-      
+      <TodoEd todos={todos} completeTodo = {completeTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
     </div>
-    
-    
-    </>
-    
   )
 }
 

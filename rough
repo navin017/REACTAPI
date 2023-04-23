@@ -1,4 +1,4 @@
-// const completeTodo = id =>{
+<!-- // const completeTodo = id =>{
     //   const updateTodos = todos.map(todo=>{
     //     if(todo,id === id){
     //       todo.isComplete = !todo.isComplete
@@ -24,3 +24,17 @@
         {console.log("===========================================================TODO NAME+++++++",todo.name)} 
             {todo.name}  
         </div>   */}
+        // useEffect(() => {
+     
+            //   localStorage.setItem('todos', JSON.stringify(todos));
+            // }, [todos, isTodo]); -->
+            <!-- todos={todos} onClick={()=>{setIsTodo(true)}} -->
+            <!-- onClick={()=>{props.onClick()}}  -->
+
+            // function handleEditTodoClick(todo) {
+                //   setEdit({ id: todo.id, name: todo.name });
+                // }
+<!-- 
+                {edit.id !== null && (
+                    <TodoList edit={edit} onSubmit={handleSubmitUpdate} />
+                  )} -->
